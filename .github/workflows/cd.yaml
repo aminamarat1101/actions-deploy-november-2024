@@ -1,9 +1,19 @@
 name: Deploy to GKE
 
 on:
-  push:
-    branches: ["main"]
+  #push:
+  #  branches: ["main"]
 
+  workflow_dispatch:
+    inputs:
+      docker_image: 
+        description: 'Enter image name'
+        required: true
+        default: ''
+      docker_tag: 
+        description: 'Enter image tag'
+        required: true
+        default: ''
 
 jobs:
   setup-build-publish:
