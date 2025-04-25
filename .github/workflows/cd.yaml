@@ -30,3 +30,6 @@ jobs:
 
     - name: Get GKE credentials
       run: gcloud container clusters get-credentials cluster-1 --region us-central1 --project kubernetes-452623
+
+    - name: Install app
+      run: helm install flask .
